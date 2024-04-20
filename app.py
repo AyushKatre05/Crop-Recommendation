@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 
 # Load the model
-model = joblib.load('Pickle_RL_Model.pkl')
+model = joblib.load('crop_app.pkl')
 
 # Define the Streamlit app
 def main():
@@ -11,13 +11,13 @@ def main():
 
     # Input form
     st.sidebar.header('Input Parameters')
-    nitrogen = st.sidebar.number_input('Nitrogen', min_value=0.0, max_value=1000.0, step=1.0, value=0)
-    phosphorus = st.sidebar.number_input('Phosphorus', min_value=0.0, max_value=1000.0, step=1.0, value=0)
-    potassium = st.sidebar.number_input('Potassium', min_value=0.0, max_value=1000.0, step=1.0, value=0)
-    temperature = st.sidebar.number_input('Temperature (in Celsius)', min_value=-50.0, max_value=50.0, step=1.0, value=0)
-    humidity = st.sidebar.number_input('Humidity (in %)', min_value=0.0, max_value=100.0, step=1.0, value=0)
-    ph = st.sidebar.number_input('pH', min_value=0.0, max_value=14.0, step=0.1, value=0)
-    rainfall = st.sidebar.number_input('Rainfall (in mm)', min_value=0.0, max_value=1000.0, step=1.0, value=0)
+    nitrogen = st.sidebar.number_input('Nitrogen', min_value=0.0, max_value=1000.0, step=1.0, value=0.0)
+    phosphorus = st.sidebar.number_input('Phosphorus', min_value=0.0, max_value=1000.0, step=1.0, value=0.0)
+    potassium = st.sidebar.number_input('Potassium', min_value=0.0, max_value=1000.0, step=1.0, value=0.0)
+    temperature = st.sidebar.number_input('Temperature (in Celsius)', min_value=-50.0, max_value=50.0, step=1.0, value=0.0)
+    humidity = st.sidebar.number_input('Humidity (in %)', min_value=0.0, max_value=100.0, step=1.0, value=0.0)
+    ph = st.sidebar.number_input('pH', min_value=0.0, max_value=14.0, step=0.1, value=0.0)
+    rainfall = st.sidebar.number_input('Rainfall (in mm)', min_value=0.0, max_value=1000.0, step=1.0, value=0.0)
 
     # Prediction button
     if st.sidebar.button('Predict'):
